@@ -17,7 +17,7 @@ const getChoiceById = async(searchId) =>{
 const kanapImg = choiceById =>{
    const cadre = document.querySelector('.item__img');
    if(cadre != null){
-    cadre.innerHTML=`<img src="${choiceById.imageUrl}" alt="${choiceById.altTxt}">`;
+    cadre.innerHTML=`<img src="${choiceById.imageUrl}" alt="${choiceById.altTxt}" id=image-article>`;
     return cadre
    }
 }
@@ -53,6 +53,32 @@ const main = async() =>{
  kanapDescript(getDataChoice);
  kanapColor(getDataChoice);
  kanapImg(getDataChoice);
+
+ const button = document.getElementById('addToCart');
+ button.addEventListener('click', function storage(){
+    const photo = getDataChoice.imageUrl;
+    const price = getDataChoice.price;
+    const colorChoice = document.querySelector('#colors').value;
+    const numberChoice = document.querySelector('#quantity').value;
+    const key = getUrlId + " "+colorChoice
+    if(colorChoice == null || colorChoice == "" || numberChoice == 0 ){
+        window.alert('choisir une couleur et une quantité');
+    }
+    const article = {
+        id:getUrlId,
+        photo:photo,
+        price:price,
+        color:colorChoice,
+        quantity:parseInt(numberChoice),
+    }
+        try {
+            localStorage.setItem(key,JSON.stringify(article));
+                
+        } catch (error) {
+            console.log("error");
+        }
+
+ })
  
 }
 
