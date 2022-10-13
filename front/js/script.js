@@ -23,21 +23,19 @@ const createKanap = (kanap) =>{
     kanapCard.appendChild(kanapDescribe);
     
     const kanapLink = document.createElement('a');
-    kanapLink.setAttribute('href',`./product.html?id=${kanap.price}`);
+    kanapLink.classList.add('choix_produit')
+    kanapLink.setAttribute('href',`./product.html?id=${kanap._id}`);
     kanapLink.appendChild(kanapCard);
 
     return kanapLink
 }
+
 const main = async() =>{
     const kanaps = await retrieveKanapData()
     for(product of kanaps){
         createKanap(product);
         items.appendChild(createKanap(product))
     }
-    let link = document.getElementsByTagName('a')
-    link.addEventListener('click', function(e){
-        
-    })
 }
 main();
 
