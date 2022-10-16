@@ -57,7 +57,9 @@ const main = async() =>{
  const button = document.getElementById('addToCart');
  button.addEventListener('click', function storage(){
     const photo = getDataChoice.imageUrl;
+    const text = getDataChoice.altTxt;
     const price = getDataChoice.price;
+    const name = getDataChoice.name;
     const colorChoice = document.querySelector('#colors').value;
     const numberChoice = document.querySelector('#quantity').value;
     const key = getUrlId + " "+colorChoice
@@ -67,17 +69,19 @@ const main = async() =>{
     const article = {
         id:getUrlId,
         photo:photo,
+        text:text,
         price:price,
+        name:name,
         color:colorChoice,
         quantity:parseInt(numberChoice),
     }
         try {
             localStorage.setItem(key,JSON.stringify(article));
-                
+
         } catch (error) {
             console.log("error");
         }
-
+        window.location.href='index.html';
  })
  
 }
