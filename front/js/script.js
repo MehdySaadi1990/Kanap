@@ -1,9 +1,10 @@
 const items = document.getElementById('items');
+//Fonction récupération des données de l'API pour affichage article
 const retrieveKanapData = () => fetch('http://localhost:3000/api/products')
 .then(res => res.json())
 .then(product=>product)
 .catch(err => console.log(err))
-
+//Construction card pour affichage articles
 const createKanap = (kanap) =>{
     const kanapPhoto = document.createElement('img');
     kanapPhoto.setAttribute('src',`${kanap.imageUrl}`);
@@ -29,7 +30,7 @@ const createKanap = (kanap) =>{
 
     return kanapLink
 }
-
+//Fonction principale
 const main = async() =>{
     const kanaps = await retrieveKanapData()
     for(product of kanaps){
