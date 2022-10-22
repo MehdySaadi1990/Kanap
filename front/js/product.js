@@ -104,7 +104,7 @@ const main = async() =>{
         text:text,
         name:name,
         color:colorChoice,
-        price:parseInt(price),
+        price:price,
         quantity:parseInt(numberChoice),
     }
 
