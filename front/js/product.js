@@ -96,22 +96,24 @@ const main = async() =>{
     //Message alerte si manque information quantité ou couleur
     if(colorChoice == null || colorChoice == "" || numberChoice == 0 ){
         window.alert('choisir une couleur et une quantité');
-    }
-    //Creation des articles a envoyer au localStorage
-    const article = {
-        id:getUrlId +"."+colorChoice,
-        photo:photo,
-        text:text,
-        name:name,
-        color:colorChoice,
-        price:price,
-        quantity:parseInt(numberChoice),
-    }
+    }else{
+//Creation des articles a envoyer au localStorage
+const article = {
+    id:getUrlId +"."+colorChoice,
+    photo:photo,
+    text:text,
+    name:name,
+    color:colorChoice,
+    price:price,
+    quantity:parseInt(numberChoice),
+}
 
-    addItem(article);
+addItem(article);
+
+//Redirection sur la page d'accueil après choix
+window.location.href='index.html';
+    }
     
-    //Redirection sur la page d'accueil après choix
-    window.location.href='index.html';
  })
  
 }

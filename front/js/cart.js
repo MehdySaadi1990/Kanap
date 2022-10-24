@@ -41,11 +41,11 @@ const getItems=(storage)=>{
             name.textContent=`${storage[i].name}`;
             const color = document.createElement('p');
             color.textContent=`${storage[i].color}`
-            const price = document.createElement('p');
-            price.textContent =`${storage[i].price}` + ' €';
+            const priceItem = document.createElement('p');
+            priceItem.textContent = `${storage[i].price}`
             description.appendChild(name);
             description.appendChild(color);
-            description.appendChild(price);
+            description.appendChild(priceItem);
             const quantity = document.createElement('div');
             quantity.classList.add('cart__item__content__settings__quantity');
             const remove = document.createElement('div');
@@ -72,6 +72,7 @@ const getItems=(storage)=>{
     }
     return items;
 }
+
 //Fonction de calcul quantité totale
 const getTotalQty=(storage)=>{
     let total =0;
