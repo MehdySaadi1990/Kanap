@@ -42,7 +42,12 @@ const getItems=(storage)=>{
             const color = document.createElement('p');
             color.textContent=`${storage[i].color}`
             const priceItem = document.createElement('p');
-            priceItem.textContent = `${storage[i].price}`
+            //Récupération du prix via l'API pour affichage
+            let id = storage[i].id.split('.')[0];
+            fetch(`http://localhost:3000/api/products/${id}`)
+            .then(res => res.json())
+            .then(data=>priceItem.textContent = data.price + ' €')
+            .catch(err => console.log(err))
             description.appendChild(name);
             description.appendChild(color);
             description.appendChild(priceItem);
@@ -87,11 +92,17 @@ const getTotalQty=(storage)=>{
 const getTotalPrice=(storage)=>{
     let total =0;
     for(let i=0; i<storage.length; i++){
-        total=total + (storage[i].price*storage[i].quantity);
+        let id = storage[i].id.split('.')[0];
+            fetch(`http://localhost:3000/api/products/${id}`)
+            .then(res => res.json())
+            .then(data=>{
+                let quantity = document.getElementsByClassName('itemQuantity');
+                total+=data.price*quantity[i].value;
+                const totalPrice=document.getElementById('totalPrice');
+                totalPrice.textContent=total;
+                return totalPrice})
+            .catch(err => console.log(err))
     }
-    const totalPrice=document.getElementById('totalPrice');
-    totalPrice.textContent=total;
-    return totalPrice;
 }
 //Fonction d'enregistrement dans le panier'
 const saveBasket = (basket) =>{

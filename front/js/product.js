@@ -104,7 +104,6 @@ const article = {
     text:text,
     name:name,
     color:colorChoice,
-    price:price,
     quantity:parseInt(numberChoice),
 }
 
