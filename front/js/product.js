@@ -90,7 +90,6 @@ const main = async() =>{
     const photo = getDataChoice.imageUrl;
     const text = getDataChoice.altTxt;
     const name = getDataChoice.name;
-    const price = getDataChoice.price;
     const colorChoice = document.querySelector('#colors').value;
     const numberChoice = document.querySelector('#quantity').value;
     //Message alerte si manque information quantité ou couleur
