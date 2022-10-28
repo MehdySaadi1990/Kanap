@@ -298,7 +298,7 @@ const submitForm=(e) =>{
             },
             body: JSON.stringify(order)
           })
-          //Récupération du numéro de commande et effacement du localStorage
+          //Récupération du numéro de commande
           .then(res=> res.json())
           .then(data=>{ 
             const orderNumber = data.orderId;

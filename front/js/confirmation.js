@@ -1,4 +1,4 @@
-//Récupération numéro de commande via URL
+//Récupération numéro de commande via localStorage
 const getOrderId = () =>{
     const orderId = localStorage.getItem('orderId');
     return orderId
@@ -8,7 +8,7 @@ const displayOrdernumber= (orderId) =>{
 const orderNumber = document.getElementById('orderId');
 orderNumber.textContent=orderId;
 }
-//Fonction effacement du numéro de commande dans l'URL
+//Fonction effacement du numéro de commande dans l'URL via effacement localStorage
 const removeOrderIdFromURL = () =>{
     localStorage.clear();
 }
