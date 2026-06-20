@@ -44,7 +44,7 @@ const getItems=(storage)=>{
             const priceItem = document.createElement('p');
             //Récupération du prix via l'API pour affichage
             let id = storage[i].id.split('.')[0];
-            fetch(`http://localhost:3000/api/products/${id}`)
+            fetch(`https://kanap-0d0x.onrender.com/api/products/${id}`)
             .then(res => res.json())
             .then(data=>priceItem.textContent = data.price + ' €')
             .catch(err => console.log(err))
@@ -93,7 +93,7 @@ const getTotalPrice=(storage)=>{
     let total =0;
     for(let i=0; i<storage.length; i++){
         let id = storage[i].id.split('.')[0];
-            fetch(`http://localhost:3000/api/products/${id}`)
+            fetch(`https://kanap-0d0x.onrender.com/api/products/${id}`)
             .then(res => res.json())
             .then(data=>{
                 let quantity = document.getElementsByClassName('itemQuantity');
@@ -290,7 +290,7 @@ const submitForm=(e) =>{
         if(testFirstName() && testLastName() && testAdressName() && testCityName() && testEmailName()==true){
         const order = requestToPost();
         //Envoi requête POST avec les éléments du formulaire correctement remplis
-        fetch("http://localhost:3000/api/products/order", {
+        fetch("https://kanap-0d0x.onrender.com/api/products/order", {
         method: "POST",
         headers: {
             'Accept': 'application/json', 

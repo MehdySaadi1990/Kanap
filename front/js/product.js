@@ -6,7 +6,7 @@ const getId = () =>{
 //Récupération des données d'un seul produit via une requête précise à l'API
 const getChoiceById = async(searchId) =>{
     try {
-    const fetchItem = await fetch(`http://localhost:3000/api/products/${searchId}`)
+    const fetchItem = await fetch(`https://kanap-0d0x.onrender.com/api/products/${searchId}`)
     return fetchItem.json();
 
     } catch (error) {

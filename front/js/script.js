@@ -1,6 +1,6 @@
 const items = document.getElementById('items');
 //Fonction récupération des données de l'API pour affichage article
-const retrieveKanapData = () => fetch('http://localhost:3000/api/products')
+const retrieveKanapData = () => fetch('https://kanap-0d0x.onrender.com/api/products')
 .then(res => res.json())
 .then(product=>product)
 .catch(err => console.log(err))
