@@ -22,7 +22,7 @@ const createKanap = (kanap) =>{
     kanapCard.appendChild(kanapPhoto);
     kanapCard.appendChild(kanapTitle);
     kanapCard.appendChild(kanapDescribe);
-    
+
     const kanapLink = document.createElement('a');
     kanapLink.classList.add('choix_produit')
     kanapLink.setAttribute('href',`./product.html?id=${kanap._id}`);
