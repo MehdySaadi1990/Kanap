@@ -314,6 +314,8 @@ const submitForm=(e) =>{
 //Fonction principale chargement page et gestion des évènements
 const main=()=>{
 const elements = getStorage();
+console.log(elements);
+
 getItems(elements);
 getTotalQty(elements);
 getTotalPrice(elements);

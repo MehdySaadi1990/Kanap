@@ -25,7 +25,7 @@ const createKanap = (kanap) =>{
 
     const kanapLink = document.createElement('a');
     kanapLink.classList.add('choix_produit')
-    kanapLink.setAttribute('href',`./product.html?id=${kanap._id}`);
+    kanapLink.setAttribute('href',`front/html/product.html?id=${kanap._id}`);
     kanapLink.appendChild(kanapCard);
 
     return kanapLink

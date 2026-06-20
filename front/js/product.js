@@ -65,7 +65,7 @@ const getBasket = () =>{
 }
 //Fonction d'ajout d'un article
 const addItem= (article) =>{
-let basket = getBasket();
+let basket = getBasket()
 let findProduct = basket.find(p => p.id == article.id)
 if(findProduct != undefined){
     findProduct.quantity+=article.quantity;
@@ -109,7 +109,7 @@ const article = {
 addItem(article);
 
 //Redirection sur la page d'accueil après choix
-window.location.href='index.html';
+window.location.href='../../index.html';
     }
     
  })
